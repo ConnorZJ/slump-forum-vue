@@ -10,7 +10,15 @@ module.exports = {
     // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    proxyTable: {},
+    proxyTable: {
+      '/slump': {
+        target: 'http://127.0.0.1:8088',//后端接口地址
+        changeOrigin: true,//是否允许跨越
+        pathRewrite: {
+          'slump' : 'slump'
+        }
+    }
+    },
 
     // Various Dev Server settings
     host: 'localhost', // can be overwritten by process.env.HOST
