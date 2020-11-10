@@ -10,7 +10,7 @@ import http from './request/http'
 Vue.use(ElementUI)
 Vue.config.productionTip = false
 
-Vue.prototype.axios = http;
+Vue.prototype.axios = http
 
 /* eslint-disable no-new */
 new Vue({

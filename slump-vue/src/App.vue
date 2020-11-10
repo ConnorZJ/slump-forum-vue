@@ -1,20 +1,13 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png" />
     <router-view />
-    <el-button type="primary" size="default" @click="loadTopic()">Rqeuest</el-button>
   </div>
 </template>
 
 <script>
 export default {
-  name: "App",
-  methods: {
-    loadTopic() {
-      this.axios.get('/topic').then(res=>console.log(res));
-    }
-  }
-};
+  name: 'App'
+}
 </script>
 
 <style>
