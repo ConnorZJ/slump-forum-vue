@@ -1,5 +1,11 @@
 <template>
-  <el-form :model="loginForm" :rules="loginRule" ref="loginForm" label-width="100px">
+  <el-form
+    class="loginForm"
+    :model="loginForm"
+    :rules="loginRule"
+    ref="loginForm"
+    label-width="100px"
+  >
     <el-form-item label="账号" prop="username">
       <el-input v-model="loginForm.username" placeholder="请输入账号"></el-input>
     </el-form-item>
@@ -18,19 +24,26 @@ export default {
   data () {
     return {
       loginForm: {
-        username: '17370012735',
+        username: 'admin',
         password: '123456'
       },
       loginRule: {
         username: [
           { required: true, message: '请输入账号！', trigger: 'blur' },
-          { min: 3, max: 5, message: '长度在 3 到 5 个字符', trigger: 'blur' }
+          { min: 8, max: 15, message: '长度在 8 到 15 个字符', trigger: 'blur' }
         ],
-        password: []
+        password: [
+          { required: true, message: '请输入密码！', trigger: 'blur' },
+          { min: 8, max: 15, message: '长度在 8 到 15 个字符', trigger: 'blur' }
+        ]
       }
     }
   }
 }
 </script>
 
-<style></style>
+<style scoped>
+.loginForm {
+  
+}
+</style>
